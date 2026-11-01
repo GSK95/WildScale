@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WildScale 1.1.1 User Guide</title>
+  <title>WildScale 1.1.2 User Guide</title>
   <meta name="description" content="Everything in the WildScale panel, from install to troubleshooting." />
   <link rel="icon" type="image/png" href="assets/wildscale-icon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -19,7 +19,7 @@
     </nav>
   </header>
   <main class="doc">
-<h1>WildScale 1.1.1 User Guide</h1>
+<h1>WildScale 1.1.2 User Guide</h1>
 <p>WildScale reframes a horizontal edit for vertical and social formats inside Adobe Premiere Pro. You frame a shot once, and it carries that framing through the rest of your timeline. This guide covers everything in the panel, from the first install to the odd problem you might run into.</p>
 <h2>What you need</h2>
 <ul>
@@ -31,7 +31,7 @@
 <p>A graphics card helps but is not required. WildScale uses it for text detection when it can, and uses the processor when it cannot. The top of the panel shows which one is active.</p>
 <h2>Installing</h2>
 <ol>
-<li>Run <code>WildScaleSetup-1.1.1.exe</code>. You do not need administrator rights.</li>
+<li>Run <code>WildScaleSetup-1.1.2.exe</code>. You do not need administrator rights.</li>
 <li>Restart Premiere Pro.</li>
 <li>Open the panel from the Window menu. In Premiere Pro 26.5.2 and later it is under UXP Plugins. In Premiere Pro 25.0 to 25.9 it is under Extensions.</li>
 </ol>
@@ -57,7 +57,7 @@
 <li><strong>Version:</strong> shown beside the logo.</li>
 </ul>
 <h2>1. Scene Edit Detection</h2>
-<p><strong>Cut selected clips</strong> reads every frame of the selected clips, or of all clips when none are selected, and cuts them where the shots change. It decodes on your graphics card when the video format allows it and needs FFmpeg. Without FFmpeg, WildScale uses Premiere's own detection. You can also choose that with <strong>Use Premiere's own detection instead</strong>.</p>
+<p><strong>Cut selected clips</strong> reads every frame of the selected clips, or of all clips when none are selected, and cuts them where the shots change. It decodes on your graphics card when the video format allows it and needs FFmpeg. When FFmpeg is missing, detection fails, or no cuts are found, Premiere's own detection takes over by itself. The panel shows progress, and <strong>Stop</strong> ends the search for cuts. You can also choose Premiere from the start with <strong>Use Premiere's own detection instead</strong>.</p>
 <p>Premiere gives UXP plugins no razor, so in Premiere Pro 26 the clip is laid down again from its source file, piece by piece, video and audio, keeping its Scale and Position. Other effects on that clip are not kept, clips with changed speed stay whole, and undoing takes several steps. Use it on raw footage in a duplicate sequence. In Premiere Pro 25, the real razor is used.</p>
 <h2>2. Preview and selection</h2>
 <p><strong>Capture frame</strong> loads the shot under the playhead straight from the source file, so you see the whole frame and not only the crop. Press <strong>C</strong> to do the same while the panel is active. In the timeline, C stays Premiere's own Razor key.</p>
@@ -156,6 +156,9 @@
 <li>Windows only for now.</li>
 </ul>
 <h2>Version history</h2>
+<p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
+<p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
+<p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
 <p><strong>1.1.1:</strong> Timeline colors now stay on clips, and clips Rescale leaves unchanged get their color too.</p>
 <p><strong>1.1.0:</strong> Frame-exact cut detection on the graphics card, cuts applied to raw video and audio, Copy and Paste of Scale and Position, exact paste from references during Rescale, Same person and Any speaker presets, Shot matching, real timeline colors by group, a grid of takes for each group, sessions saved per sequence, faster repeat runs of Rescale, Settings with system checks, automatic resource modes for 16 GB computers, and a start guide.</p>
 <p><strong>1.0.0:</strong> First release.</p>
