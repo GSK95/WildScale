@@ -5,7 +5,7 @@
 <p align="center"><strong>Frame one shot. We'll do the rest.</strong></p>
 
 <p align="center">
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.7/WildScaleSetup-1.1.7.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.8/WildScaleSetup-1.1.8.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -59,7 +59,7 @@ macOS is not supported.
 ### What you might need to install
 
 - **FFmpeg** is a free tool that WildScale does not include. It makes cut detection faster and powers motion detection. You can install it with `winget install Gyan.FFmpeg`, then restart Premiere Pro.
-- **Without FFmpeg**, a slower built-in decoder finds the cuts and each clip is framed as a whole. Premiere's own Scene Edit Detection takes over when WildScale's fails or finds no cuts.
+- **Without FFmpeg**, a slower built-in decoder finds the cuts and each clip is framed as a whole. Premiere's own Scene Edit Detection only runs when you tick it.
 - **Administrator rights** are not needed to install WildScale.
 - **An internet connection** is only needed to download the installer. The face and text models are included.
 
@@ -76,7 +76,7 @@ macOS is not supported.
 
 ## Install
 
-1. Download [`WildScaleSetup-1.1.7.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.7/WildScaleSetup-1.1.7.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.1.8.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.8/WildScaleSetup-1.1.8.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
@@ -96,7 +96,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 ## Status
 
-WildScale 1.1.7 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
+WildScale 1.1.8 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
 Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 

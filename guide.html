@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WildScale 1.1.7 User Guide</title>
+  <title>WildScale 1.1.8 User Guide</title>
   <meta name="description" content="Everything in the WildScale panel, from install to troubleshooting." />
   <link rel="icon" type="image/png" href="assets/wildscale-icon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -19,7 +19,7 @@
     </nav>
   </header>
   <main class="doc">
-<h1>WildScale 1.1.7 User Guide</h1>
+<h1>WildScale 1.1.8 User Guide</h1>
 <p>WildScale reframes a horizontal edit for vertical and social formats inside Adobe Premiere Pro. You frame a shot once, and it carries that framing through the rest of your timeline. This guide covers everything in the panel, from the first install to the odd problem you might run into.</p>
 <h2>What you need</h2>
 <ul>
@@ -31,7 +31,7 @@
 <p>A graphics card helps but is not required. WildScale uses it for text detection when it can, and uses the processor when it cannot. The top of the panel shows which one is active.</p>
 <h2>Installing</h2>
 <ol>
-<li>Run <code>WildScaleSetup-1.1.7.exe</code>. You do not need administrator rights.</li>
+<li>Run <code>WildScaleSetup-1.1.8.exe</code>. You do not need administrator rights.</li>
 <li>Restart Premiere Pro.</li>
 <li>Open the panel from the Window menu. In Premiere Pro 26.5.2 and later it is under UXP Plugins. In Premiere Pro 25.0 to 26.5.1 it is under Extensions.</li>
 </ol>
@@ -57,7 +57,7 @@
 <li><strong>Version:</strong> shown beside the logo.</li>
 </ul>
 <h2>1. Scene Edit Detection</h2>
-<p><strong>Cut selected clips</strong> reads every frame of the selected clips, or of all clips when none are selected, and cuts them where the shots change. It decodes on your graphics card when the video format allows it. Without FFmpeg, it uses a slower built-in decoder. When detection fails or no cuts are found, Premiere's own detection takes over by itself. The panel shows progress, and <strong>Stop</strong> ends the search for cuts. You can also choose Premiere from the start with <strong>Use Premiere's own detection instead</strong>.</p>
+<p><strong>Cut selected clips</strong> reads every frame of the selected clips, or of all clips when none are selected, and cuts them where the shots change. It decodes on your graphics card when the video format allows it. Without FFmpeg, it uses a slower built-in decoder. The panel shows progress, and <strong>Stop</strong> ends the search for cuts. If detection cannot run, the status text says why. Premiere's detection only runs when you tick <strong>Use Premiere's own detection instead</strong>.</p>
 <p>Premiere gives UXP plugins no razor, so in Premiere Pro 26 the clip is laid down again from its source file, piece by piece, video and audio, keeping its Scale and Position. Other effects on that clip are not kept, clips with changed speed stay whole, and undoing takes several steps. Use it on raw footage in a duplicate sequence. In Premiere Pro 25, the real razor is used.</p>
 <h2>2. Preview and selection</h2>
 <p><strong>Capture frame</strong> loads the shot under the playhead straight from the source file, so you see the whole frame and not only the crop. Press <strong>C</strong> to do the same while the panel is active. In the timeline, C stays Premiere's own Razor key.</p>
@@ -67,6 +67,7 @@
 <li><strong>Must show</strong> keeps a logo, face or object in frame.</li>
 <li><strong>Must hide</strong> keeps it out of frame. If it cannot be hidden without losing something that must stay, the final status tells you.</li>
 </ul>
+<p>Click a mark to adjust it. Drag it to move it, or drag a handle to resize it. The arrow keys move it one pixel, or ten with Shift, and <strong>Delete</strong> removes it. You can also type exact <strong>X</strong>, <strong>Y</strong>, <strong>W</strong> and <strong>H</strong> values in pixels, and switch it between <strong>Must show</strong> and <strong>Must hide</strong>.</p>
 <p>Mark small things and not the whole shot. With <strong>Remember marks for future projects</strong> on, marks carry over to new projects. Marks larger than a quarter of the frame only apply to the current run.</p>
 <h2>3. References</h2>
 <p>A reference tells WildScale how shots like this one should look. Select a clip, choose a preset and click <strong>Remember selected clips</strong>. You can add several, each with its own preset.</p>
@@ -193,18 +194,7 @@
 <li>Windows only for now.</li>
 </ul>
 <h2>Version history</h2>
-<p><strong>1.1.7:</strong> WildScale loads in Premiere Pro 26.0 to 26.5.1, under Window &gt; Extensions.</p>
-<p><strong>1.1.6:</strong> The launcher and the service have the WildScale icon with a gear.</p>
-<p><strong>1.1.5:</strong> WildScale now finds black bars and split screens, crops the bars and fixes the framing by itself. Each reference has its own rules for graphics. Reference list with one-click jumps. Hand edits are learned on the next Rescale. A clip you choose as a reference always follows your choice. Rescale no longer stops on clips Premiere has not finished placing.</p>
-<p><strong>1.1.4:</strong> If the graphics card finds no cuts, WildScale reads the clip again on the processor. The status text shows what was read.</p>
-<p><strong>1.1.3:</strong> Cut detection no longer needs FFmpeg. A built-in decoder takes over, on your graphics card when it can.</p>
-<p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
-<p><strong>1.1.7:</strong> WildScale loads in Premiere Pro 26.0 to 26.5.1, under Window &gt; Extensions.</p>
-<p><strong>1.1.6:</strong> The launcher and the service have the WildScale icon with a gear.</p>
-<p><strong>1.1.5:</strong> WildScale now finds black bars and split screens, crops the bars and fixes the framing by itself. Each reference has its own rules for graphics. Reference list with one-click jumps. Hand edits are learned on the next Rescale. A clip you choose as a reference always follows your choice. Rescale no longer stops on clips Premiere has not finished placing.</p>
-<p><strong>1.1.4:</strong> If the graphics card finds no cuts, WildScale reads the clip again on the processor. The status text shows what was read.</p>
-<p><strong>1.1.3:</strong> Cut detection no longer needs FFmpeg. A built-in decoder takes over, on your graphics card when it can.</p>
-<p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
+<p><strong>1.1.8:</strong> Cut selected clips always uses WildScale's own detection, and the status text says why when it cannot run. Premiere's detection only runs when you tick it. Marks in Preview can now be moved, resized and set to exact pixel values.</p>
 <p><strong>1.1.7:</strong> WildScale loads in Premiere Pro 26.0 to 26.5.1, under Window &gt; Extensions.</p>
 <p><strong>1.1.6:</strong> The launcher and the service have the WildScale icon with a gear.</p>
 <p><strong>1.1.5:</strong> WildScale now finds black bars and split screens, crops the bars and fixes the framing by itself. Each reference has its own rules for graphics. Reference list with one-click jumps. Hand edits are learned on the next Rescale. A clip you choose as a reference always follows your choice. Rescale no longer stops on clips Premiere has not finished placing.</p>
