@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WildScale: Smart reframing for Premiere Pro</title>
+  <meta name="description" content="Turn a horizontal edit into a vertical one. Frame a shot once and WildScale carries it through your whole Premiere Pro timeline." />
+  <meta property="og:title" content="WildScale: Smart reframing for Premiere Pro" />
+  <meta property="og:description" content="Frame a shot once. WildScale carries it through your whole timeline." />
+  <meta property="og:image" content="assets/wildscale-main.png" />
+  <link rel="icon" type="image/png" href="assets/wildscale-icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="top">
+    <a class="brand" href="index.html"><img src="assets/wildscale-logo.png" alt="WildScale" /></a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="guide.html">Guide</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">For Adobe Premiere Pro on Windows</p>
+      <h1>Frame one shot.<br /><span>WildScale reframes the rest.</span></h1>
+      <p class="lead">Reframing a long edit for Reels usually means going clip by clip, moving the same speaker into the same spot. WildScale does that pass for you, live on your timeline.</p>
+      <div class="actions">
+        <a class="button primary" href="guide.html">Read the guide</a>
+        <span class="status">Version 1.0.0, coming soon</span>
+      </div>
+    </section>
+
+    <section id="features" class="section">
+      <h2>Built the way editors work</h2>
+      <div class="grid">
+        <article>
+          <h3>Follows your framing</h3>
+          <p>Set your main speaker once. WildScale recognizes the same camera setup across your cuts and applies your Position and Scale.</p>
+        </article>
+        <article>
+          <h3>Keeps titles whole</h3>
+          <p>When a title leaves the crop, it tries a small move first. If that is not enough, it shows the whole frame for as long as the title is on screen.</p>
+        </article>
+        <article>
+          <h3>Clean back blur</h3>
+          <p>Two layers and no more: an ambient blurred layer below, and your shot fitted to the frame above with a soft drop shadow.</p>
+        </article>
+        <article>
+          <h3>Notices motion</h3>
+          <p>Animated transitions, split screens and graphics flying in are split into takes, so each one gets its own framing.</p>
+        </article>
+        <article>
+          <h3>Groups your shots</h3>
+          <p>Clips are sorted into speaker, titles, graphics, repeated shots and b-roll. One click selects a group, ready for Paste Attributes.</p>
+        </article>
+        <article>
+          <h3>Learns your fixes</h3>
+          <p>Mark what must show or stay hidden, and fix a clip by hand. WildScale remembers your choices for future projects.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><strong>Frame a shot.</strong> Set one clip of your speaker the way you like it.</li>
+        <li><strong>Remember it.</strong> Select the clip and add it as a reference.</li>
+        <li><strong>Click Rescale.</strong> Watch each clip change in your open sequence. Stop whenever you like and keep what is done.</li>
+      </ol>
+    </section>
+
+    <section class="section split">
+      <div>
+        <h2>Private by design</h2>
+        <p>Frames are analyzed on your own computer. Your footage is never uploaded.</p>
+      </div>
+      <div>
+        <h2>Requirements</h2>
+        <ul>
+          <li>Adobe Premiere Pro 26.5.2 or later</li>
+          <li>Windows 10 or 11, 64-bit</li>
+          <li>WildScale Setup, a free companion installer</li>
+          <li>FFmpeg, only for motion detection</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom">
+    <p>© 2026 Drugela. WildScale is an independent product and is not affiliated with or endorsed by Adobe. Adobe and Premiere Pro are trademarks of Adobe Inc.</p>
+    <p><a href="guide.html">Guide</a> · <a href="privacy.html">Privacy</a></p>
+  </footer>
+</body>
+
+</html>
