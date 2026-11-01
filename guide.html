@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WildScale 1.1.0 User Guide</title>
+  <title>WildScale 1.1.1 User Guide</title>
   <meta name="description" content="Everything in the WildScale panel, from install to troubleshooting." />
   <link rel="icon" type="image/png" href="assets/wildscale-icon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -19,7 +19,7 @@
     </nav>
   </header>
   <main class="doc">
-<h1>WildScale 1.1.0 User Guide</h1>
+<h1>WildScale 1.1.1 User Guide</h1>
 <p>WildScale reframes a horizontal edit for vertical and social formats inside Adobe Premiere Pro. You frame a shot once, and it carries that framing through the rest of your timeline. This guide covers everything in the panel, from the first install to the odd problem you might run into.</p>
 <h2>What you need</h2>
 <ul>
@@ -31,7 +31,7 @@
 <p>A graphics card helps but is not required. WildScale uses it for text detection when it can, and uses the processor when it cannot. The top of the panel shows which one is active.</p>
 <h2>Installing</h2>
 <ol>
-<li>Run <code>WildScaleSetup-1.1.0.exe</code>. You do not need administrator rights.</li>
+<li>Run <code>WildScaleSetup-1.1.1.exe</code>. You do not need administrator rights.</li>
 <li>Restart Premiere Pro.</li>
 <li>Open the panel from the Window menu. In Premiere Pro 26.5.2 and later it is under UXP Plugins. In Premiere Pro 25.0 to 25.9 it is under Extensions.</li>
 </ol>
@@ -93,7 +93,7 @@
 <li><strong>Repeated shot:</strong> a look that returns in three or more clips</li>
 <li><strong>B-roll:</strong> everything else</li>
 </ul>
-<p>On the timeline, clips take a matching label: Speaker is Cerulean, Titles are Mango, Graphics are Rose, and other shots are Forest. Premiere has no way to color an existing clip, so WildScale lays it down again from its source file. Clips over a blurred background and clips with changed speed keep their color. Effects other than framing are not kept, so turn off <strong>Color clips on the timeline by group</strong> in <strong>Options</strong> to keep them.</p>
+<p>On the timeline, clips take a matching label: Speaker is Cerulean, Titles are Mango, Graphics are Rose, and other shots are Forest. Premiere gives every clip of one source the same color, so WildScale adds one subclip per group to your project, named like <code>Video [WildScale Speaker]</code>, and lays clips down again from it. Your original footage keeps its color. Keep those subclips in the project, because the timeline uses them. Top clips of an existing back blur and clips with changed speed keep their color. Scale and Position are kept, but other effects are not, so turn off <strong>Color clips on the timeline by group</strong> in <strong>Options</strong> to keep them.</p>
 <p>Click <strong>Select</strong> to select a whole group in the timeline and open a grid of its takes. Click a picture to jump to that clip and check it. A good way to use this is to fix one clip, copy it, select its group and use <strong>Paste Attributes</strong> on the rest.</p>
 <p>Sorting is automatic and will sometimes get a clip wrong, so look through a group before changing all of it.</p>
 <h2>6. Options</h2>
@@ -156,6 +156,7 @@
 <li>Windows only for now.</li>
 </ul>
 <h2>Version history</h2>
+<p><strong>1.1.1:</strong> Timeline colors now stay on clips, and clips Rescale leaves unchanged get their color too.</p>
 <p><strong>1.1.0:</strong> Frame-exact cut detection on the graphics card, cuts applied to raw video and audio, Copy and Paste of Scale and Position, exact paste from references during Rescale, Same person and Any speaker presets, Shot matching, real timeline colors by group, a grid of takes for each group, sessions saved per sequence, faster repeat runs of Rescale, Settings with system checks, automatic resource modes for 16 GB computers, and a start guide.</p>
 <p><strong>1.0.0:</strong> First release.</p>
 <h2>Support</h2>
