@@ -31,13 +31,37 @@ WildScale is a panel for Adobe Premiere Pro that reframes a horizontal edit for 
 - **Works within your memory.** Settings checks your system and adjusts to the memory Premiere leaves free.
 - **Stays on your computer.** Frames are analyzed locally. Your footage is never uploaded.
 
-## Requirements
+## System requirements
 
-- Adobe Premiere Pro 25.0 to 25.9, or 26.5.2 and later
-- Windows 10 or 11, 64-bit
-- FFmpeg, for frame-exact cut detection and motion detection
+| | Required | Recommended |
+|---|---|---|
+| **Premiere Pro** | 25.0 to 25.9, or 26.5.2 and later | 26.5.2 or later, for every feature |
+| **Operating system** | Windows 10 or 11, 64-bit | Windows 11 |
+| **Memory** | Enough left over beside Premiere | 16 GB or more |
+| **Processor** | Any 64-bit processor | 4 cores or more |
+| **Graphics card** | Not required | A DirectML-capable card, ideally NVIDIA |
+| **Disk space** | About 300 MB for WildScale | 2 GB or more free for temporary frames |
+| **FFmpeg** | Not required | Installed and on your system PATH |
 
-Premiere Pro 26.0 to 26.5.1 is not supported. A graphics card helps but is not required.
+macOS is not supported. Premiere Pro 26.0 to 26.5.1 is not supported.
+
+### What you might need to install
+
+- **FFmpeg** is a free tool that WildScale does not include. It powers frame-exact cut detection and motion detection. You can install it with `winget install Gyan.FFmpeg`, then restart Premiere Pro.
+- **Without FFmpeg**, WildScale uses Premiere's own Scene Edit Detection for cuts and frames each clip as a whole.
+- **Administrator rights** are not needed to install WildScale.
+- **An internet connection** is only needed to download the installer. The face and text models are included.
+
+### What to expect
+
+- **With 16 GB of memory**, Premiere uses most of it, so **Auto** in **Settings** stays at **Balanced** or lower. These modes use less memory, but very short titles can be missed in long clips.
+- **Below 4 GB of free memory**, WildScale switches to **Memory saver**. Below 1 GB, analysis pauses for up to 20 seconds to leave room for Premiere.
+- **Without a supported graphics card**, everything still works on the processor, but text detection is slower.
+- **ProRes and similar formats** are decoded on the processor, because graphics cards generally cannot decode them.
+- **The Windows warning** appears because the installer has a self-signed signature. Choose **More info**, then **Run anyway**.
+- **In Premiere Pro 25**, you cannot color single clips, and the new cutting and paste tools are not fully tested yet.
+
+**Settings** at the top of the panel checks your system and shows what is ready.
 
 ## Install
 
