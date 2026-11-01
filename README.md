@@ -5,7 +5,7 @@
 <p align="center"><strong>Frame one shot. We'll do the rest.</strong></p>
 
 <p align="center">
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.6/WildScaleSetup-1.1.6.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.7/WildScaleSetup-1.1.7.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -46,7 +46,7 @@ WildScale is a panel for Adobe Premiere Pro that reframes a horizontal edit for 
 
 | | Required | Recommended |
 |---|---|---|
-| **Premiere Pro** | 25.0 to 25.9, or 26.5.2 and later | 26.5.2 or later, for every feature |
+| **Premiere Pro** | 25.0 or later | 26.5.2 or later, for every feature |
 | **Operating system** | Windows 10 or 11, 64-bit | Windows 11 |
 | **Memory** | Enough left over beside Premiere | 16 GB or more |
 | **Processor** | Any 64-bit processor | 4 cores or more |
@@ -54,7 +54,7 @@ WildScale is a panel for Adobe Premiere Pro that reframes a horizontal edit for 
 | **Disk space** | About 300 MB for WildScale | 2 GB or more free for temporary frames |
 | **FFmpeg** | Not required | Installed, for faster cuts and motion detection |
 
-macOS is not supported. Premiere Pro 26.0 to 26.5.1 is not supported.
+macOS is not supported.
 
 ### What you might need to install
 
@@ -70,17 +70,17 @@ macOS is not supported. Premiere Pro 26.0 to 26.5.1 is not supported.
 - **Without a supported graphics card**, everything still works on the processor, but text detection is slower.
 - **ProRes and similar formats** are decoded on the processor, because graphics cards generally cannot decode them.
 - **The Windows warning** appears because the installer has a self-signed signature. Choose **More info**, then **Run anyway**.
-- **In Premiere Pro 25**, you cannot color single clips, and the new cutting and paste tools are not fully tested yet.
+- **In Premiere Pro 25.0 to 26.5.1**, you cannot color single clips, and the new cutting and paste tools are not fully tested yet.
 
 **Settings** at the top of the panel checks your system and shows what is ready.
 
 ## Install
 
-1. Download [`WildScaleSetup-1.1.6.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.6/WildScaleSetup-1.1.6.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.1.7.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.7/WildScaleSetup-1.1.7.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
-   - Premiere Pro 25.0 to 25.9: **Extensions**
+   - Premiere Pro 25.0 to 26.5.1: **Extensions**
 
 The installer also adds a small launcher that runs when you sign in to Windows. It starts the analysis service when the panel asks, so there is nothing to start by hand.
 
@@ -96,7 +96,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 ## Status
 
-WildScale 1.1.6 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
+WildScale 1.1.7 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
 Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 
