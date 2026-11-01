@@ -58,7 +58,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 WildScale 1.0.0 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
-This repository holds the WildScale website and hosts the releases.
+Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 
 ---
 
