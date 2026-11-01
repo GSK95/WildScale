@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WildScale 1.0.0 User Guide</title>
+  <title>WildScale 1.1.0 User Guide</title>
   <meta name="description" content="Everything in the WildScale panel, from install to troubleshooting." />
   <link rel="icon" type="image/png" href="assets/wildscale-icon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -19,14 +19,14 @@
     </nav>
   </header>
   <main class="doc">
-<h1>WildScale 1.0.0 User Guide</h1>
+<h1>WildScale 1.1.0 User Guide</h1>
 <p>WildScale reframes a horizontal edit for vertical and social formats inside Adobe Premiere Pro. You frame a shot once, and it carries that framing through the rest of your timeline. This guide covers everything in the panel, from the first install to the odd problem you might run into.</p>
 <h2>What you need</h2>
 <ul>
 <li>Adobe Premiere Pro 25.0 to 25.9, or 26.5.2 and later</li>
 <li>Windows 10 or 11, 64-bit</li>
 <li>WildScale Setup</li>
-<li>FFmpeg, only if you want motion detection. Without it, WildScale still works and frames each clip as a whole.</li>
+<li>FFmpeg, for frame-exact cut detection and motion detection. Without it, Premiere's detection cuts your clips and each clip is framed as a whole.</li>
 </ul>
 <p>A graphics card helps but is not required. WildScale uses it for text detection when it can, and uses the processor when it cannot. The top of the panel shows which one is active.</p>
 <h2>Installing</h2>
@@ -40,22 +40,26 @@
 <h2>Your first run</h2>
 <ol>
 <li>Make a backup first. WildScale changes the open sequence directly, so duplicate it if you want to keep the original.</li>
-<li>Cut your footage with Scene Edit Detection. If the sequence holds one long uncut clip, WildScale can do this for you.</li>
+<li>Select your raw clip and click <strong>Cut selected clips</strong> in <strong>Scene Edit Detection</strong>.</li>
 <li>Frame one shot of your speaker by hand, for example at Scale 200, moved to where you want it.</li>
 <li>Select that clip in the timeline.</li>
-<li>In <strong>References</strong>, leave the preset on <strong>Main speaker</strong> and click <strong>Remember selected clips</strong>.</li>
+<li>In <strong>References</strong>, pick a preset, such as <strong>Main speaker</strong>, and click <strong>Remember selected clips</strong>.</li>
 <li>Click <strong>Rescale</strong>.</li>
 </ol>
-<p>Each clip changes as soon as it is ready, and the playhead follows along. The status line counts the clips and a bar shows how far along you are.</p>
+<p>When the panel opens, only <strong>Scene Edit Detection</strong> is open and a short popup lists these steps. Each clip changes as soon as it is ready, and the playhead follows along. The status line counts the clips and a bar shows how far along you are.</p>
 <h2>The top of the panel</h2>
 <ul>
 <li><strong>Dot:</strong> green means the service is on, yellow means it is starting, and red means it is off.</li>
 <li><strong>Refresh or Start service:</strong> checks the connection, or starts the service when it is off.</li>
 <li><strong>Free memory:</strong> shuts the service down and gives back its memory. The next action starts it again in a few seconds.</li>
+<li><strong>Settings:</strong> opens system checks and resource use.</li>
 <li><strong>?:</strong> opens the built-in help.</li>
 <li><strong>Version:</strong> shown beside the logo.</li>
 </ul>
-<h2>1. Preview and selection</h2>
+<h2>1. Scene Edit Detection</h2>
+<p><strong>Cut selected clips</strong> reads every frame of the selected clips, or of all clips when none are selected, and cuts them where the shots change. It decodes on your graphics card when the video format allows it and needs FFmpeg. Without FFmpeg, WildScale uses Premiere's own detection. You can also choose that with <strong>Use Premiere's own detection instead</strong>.</p>
+<p>Premiere gives UXP plugins no razor, so in Premiere Pro 26 the clip is laid down again from its source file, piece by piece, video and audio, keeping its Scale and Position. Other effects on that clip are not kept, clips with changed speed stay whole, and undoing takes several steps. Use it on raw footage in a duplicate sequence. In Premiere Pro 25, the real razor is used.</p>
+<h2>2. Preview and selection</h2>
 <p><strong>Capture frame</strong> loads the shot under the playhead straight from the source file, so you see the whole frame and not only the crop. Press <strong>C</strong> to do the same while the panel is active. In the timeline, C stays Premiere's own Razor key.</p>
 <p>Use the mouse wheel to zoom and the middle button or <strong>Hand</strong> to pan. <strong>Fit</strong>, <strong>Center</strong> and <strong>100%</strong> work like the Premiere monitor.</p>
 <p>Drag over the picture to mark something:</p>
@@ -64,19 +68,23 @@
 <li><strong>Must hide</strong> keeps it out of frame. If it cannot be hidden without losing something that must stay, the final status tells you.</li>
 </ul>
 <p>Mark small things and not the whole shot. With <strong>Remember marks for future projects</strong> on, marks carry over to new projects. Marks larger than a quarter of the frame only apply to the current run.</p>
-<h2>2. References</h2>
+<h2>3. References</h2>
 <p>A reference tells WildScale how shots like this one should look. Select a clip, choose a preset and click <strong>Remember selected clips</strong>. You can add several, each with its own preset.</p>
 <ul>
 <li><strong>Main speaker:</strong> uses your framing and follows that person into other shots.</li>
-<li><strong>Keep my framing:</strong> uses your exact Position and Scale on matching shots.</li>
+<li><strong>Same angle:</strong> pastes your exact Position and Scale onto matching shots.</li>
+<li><strong>Same person:</strong> keeps that person's face where you put it, in any shot, at your Scale.</li>
+<li><strong>Any speaker:</strong> does the same for every large face.</li>
 <li><strong>Center without blur:</strong> fills the canvas from the middle of the shot.</li>
 <li><strong>Whole frame with blur:</strong> shows the entire shot over a blurred background.</li>
 </ul>
+<p>During Rescale, matching clips get the reference's exact values, unless a title, a hidden area or blur needs something else.</p>
 <p>If several clips were moved the same way, select only the reference clip. <strong>Clear</strong> removes the references you added.</p>
-<h2>3. Format</h2>
+<p><strong>Copy Scale and Position</strong> reads those two values from the selected clip. <strong>Paste to selected</strong> applies them to the clips you select, as one undo step, like Paste Attributes for those two values.</p>
+<h2>4. Format</h2>
 <p>WildScale reads the size of the open sequence and shows it here, along with its shape, such as 4:5. It updates by itself when you switch sequences.</p>
 <p>To use a different size, turn on <strong>Use a custom size</strong> and type the width and height.</p>
-<h2>4. Shot groups</h2>
+<h2>5. Shot groups</h2>
 <p>After a run, clips are sorted into groups, each with its own color in the panel:</p>
 <ul>
 <li><strong>Speaker:</strong> a large face in most of the clip</li>
@@ -85,13 +93,15 @@
 <li><strong>Repeated shot:</strong> a look that returns in three or more clips</li>
 <li><strong>B-roll:</strong> everything else</li>
 </ul>
-<p>Click <strong>Select</strong> to select a whole group in the timeline. A good way to use this is to fix one clip, copy it, select its group and use <strong>Paste Attributes</strong> on the rest.</p>
-<p>Sorting is automatic and will sometimes get a clip wrong, so look through a group before changing all of it. Premiere does not let plugins color single timeline clips, so the colors appear only in the panel. Groups last until the panel reloads or you run Rescale again.</p>
-<h2>5. Settings</h2>
+<p>On the timeline, clips take a matching label: Speaker is Cerulean, Titles are Mango, Graphics are Rose, and other shots are Forest. Premiere has no way to color an existing clip, so WildScale lays it down again from its source file. Clips over a blurred background and clips with changed speed keep their color. Effects other than framing are not kept, so turn off <strong>Color clips on the timeline by group</strong> in <strong>Options</strong> to keep them.</p>
+<p>Click <strong>Select</strong> to select a whole group in the timeline and open a grid of its takes. Click a picture to jump to that clip and check it. A good way to use this is to fix one clip, copy it, select its group and use <strong>Paste Attributes</strong> on the rest.</p>
+<p>Sorting is automatic and will sometimes get a clip wrong, so look through a group before changing all of it.</p>
+<h2>6. Options</h2>
 <ul>
 <li><strong>Learned preset:</strong> applies a saved set of shots trained from a finished edit. Leave it on <strong>No learned preset</strong> unless you have one.</li>
+<li><strong>Shot matching:</strong> sets how alike shots must be. <strong>Strict</strong> takes only near-identical shots, and <strong>Loose</strong> also takes shots that drifted or changed light.</li>
 <li><strong>Fast frame reading from the source file:</strong> reads frames directly from your media. It is much faster. Turn it off only if frames look wrong.</li>
-<li><strong>Scene Edit Detection on an uncut clip:</strong> cuts a sequence that holds a single clip.</li>
+<li><strong>Scene Edit Detection on an uncut clip:</strong> lets Rescale run Premiere's detection on a sequence that holds a single clip.</li>
 <li><strong>Zoom slightly toward elements:</strong> tightens the crop a little around marked elements.</li>
 <li><strong>Keep all on-screen text in frame:</strong> protects titles from the crop.</li>
 <li><strong>Keep text inside the safe zone:</strong> keeps text away from the edges and social app buttons.</li>
@@ -99,9 +109,20 @@
 <li><strong>Shrink the shot when elements do not fit:</strong> allows the whole-frame view with a background.</li>
 <li><strong>Blurred background instead of black bars:</strong> builds the back blur.</li>
 </ul>
-<h2>6. Appearance</h2>
+<h2>7. This sequence</h2>
+<p>References, groups, copied framing and a list of what WildScale did are saved per sequence on your computer. They return when you select that sequence again, even after closing Premiere. <strong>Clear this sequence</strong> removes them.</p>
+<h2>8. Settings</h2>
+<p><strong>Settings</strong> at the top of the panel checks memory, the processor, your graphics card, models and disk space. Green is fine, yellow still works but slower or lighter, and red needs fixing before a long run.</p>
+<p><strong>Resource use</strong> decides how hard WildScale works beside Premiere. <strong>Auto</strong> reads free memory and picks a mode, and on a 16 GB computer it stays at <strong>Balanced</strong> or lower.</p>
+<ul>
+<li><strong>Full:</strong> checks text about every 1.5 seconds.</li>
+<li><strong>Balanced:</strong> checks less often and frees memory after each run. Very short titles can be missed in long clips.</li>
+<li><strong>Memory saver:</strong> reads one clip stream at a time and checks about every 4 seconds. Look over clips with text afterward.</li>
+</ul>
+<p>When less than 1 GB of memory is free, analysis pauses for up to 20 seconds to leave Premiere room.</p>
+<h2>9. Appearance</h2>
 <p><strong>Theme</strong> sets the colors and <strong>Element style</strong> sets the shape and density of the controls. Mix them however you like. WildScale remembers your choice. Click any card header to collapse it.</p>
-<h2>7. Memory</h2>
+<h2>10. Memory</h2>
 <ul>
 <li><strong>Remember references from every run:</strong> keeps framing you set by hand for future projects.</li>
 <li><strong>Free memory after every run:</strong> shuts the service down when Rescale ends, so Premiere has more room.</li>
@@ -109,6 +130,8 @@
 <li><strong>Forget fixes:</strong> clears everything learned this way. Try this first if framing keeps going wrong.</li>
 </ul>
 <p>Saved marks are listed here, each with a <strong>Delete</strong> button.</p>
+<h2>Running Rescale again</h2>
+<p>WildScale remembers its plans per sequence. After you add or move a reference, only the clips that reference touches are reworked, and the rest stay as they are. Changing settings, marks, memory or a face preset reworks every clip. <strong>Rework every clip on the next Rescale</strong> in <strong>Options</strong> forces a full run.</p>
 <h2>How the framing decisions work</h2>
 <p>When a title runs past the crop, WildScale tries a small sideways move that keeps the speaker in frame. If that is not enough, it cuts to the whole frame over a blurred background for as long as the title is on screen, then cuts back.</p>
 <p>Back blur always uses two layers. The lower clip sits at Scale 500 with Gaussian Blur and lowered opacity for soft ambient color. The upper clip fits the frame and has a gentle drop shadow. Premiere's Scale to Frame Size switch is not available to plugins, so WildScale sets the Scale value that gives the same result.</p>
@@ -122,15 +145,18 @@
 <p><strong>Too much blur.</strong> Delete large marks in <strong>Memory</strong>, then click <strong>Forget fixes</strong>.</p>
 <p><strong>A clip is not recognized.</strong> Add it as another reference, or fix it by hand and click <strong>Learn from selected fixes</strong>.</p>
 <p><strong>No motion detection.</strong> Check that FFmpeg is installed and on your system PATH.</p>
+<p><strong>Service: Not Found.</strong> An older service is running. Install the current WildScale Setup.</p>
+<p><strong>A piece is missing after cutting.</strong> Press Undo until the clip is whole, then send us the status text.</p>
 <p><strong>Something failed.</strong> The last line of the panel shows the error. Include that text when you contact support.</p>
 <h2>Good to know</h2>
 <ul>
 <li>WildScale changes the open sequence directly. Undo works, but one run makes many small steps, so a duplicate is the safer backup.</li>
 <li>Blur needs a free track above the clip. If that track is in use, the clip is skipped and the status tells you.</li>
-<li>In Premiere Pro 25.0 to 25.9, all clips in the sequence must have the same resolution, and the top layer over a blurred background does not carry the original clip's effects.</li>
+<li>In Premiere Pro 25.0 to 25.9, the new cutting and paste tools are not fully tested yet. All clips in the sequence must have the same resolution, and the top layer over a blurred background does not carry the original clip's effects.</li>
 <li>Windows only for now.</li>
 </ul>
 <h2>Version history</h2>
+<p><strong>1.1.0:</strong> Frame-exact cut detection on the graphics card, cuts applied to raw video and audio, Copy and Paste of Scale and Position, exact paste from references during Rescale, Same person and Any speaker presets, Shot matching, real timeline colors by group, a grid of takes for each group, sessions saved per sequence, faster repeat runs of Rescale, Settings with system checks, automatic resource modes for 16 GB computers, and a start guide.</p>
 <p><strong>1.0.0:</strong> First release.</p>
 <h2>Support</h2>
 <p>email at <a href="mailto:drugela.music@gmail.com">drugela.music@gmail.com</a> or <a href="https://github.com/GSK95/WildScale/issues">GitHub Issues</a></p>
