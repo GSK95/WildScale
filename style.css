@@ -151,6 +151,25 @@ h1 span {
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.07);
 }
 
+.demo {
+  padding: 8px 0 72px;
+}
+
+h2 {
+  margin: 0 0 20px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.demo video {
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  background: #000000;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.07);
+}
+
 .points {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
