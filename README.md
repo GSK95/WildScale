@@ -5,7 +5,7 @@
 <p align="center"><strong>Frame one shot. We'll do the rest.</strong></p>
 
 <p align="center">
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.0/WildScaleSetup.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.0/WildScaleSetup-1.1.0.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -41,7 +41,7 @@ Premiere Pro 26.0 to 26.5.1 is not supported. A graphics card helps but is not r
 
 ## Install
 
-1. Download [`WildScaleSetup.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.0/WildScaleSetup.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.1.0.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.0/WildScaleSetup-1.1.0.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
