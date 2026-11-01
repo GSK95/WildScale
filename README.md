@@ -5,7 +5,7 @@
 <p align="center"><strong>Frame one shot. We'll do the rest.</strong></p>
 
 <p align="center">
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.8/WildScaleSetup-1.1.8.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.9/WildScaleSetup-1.1.9.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -76,7 +76,7 @@ macOS is not supported.
 
 ## Install
 
-1. Download [`WildScaleSetup-1.1.8.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.8/WildScaleSetup-1.1.8.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.1.9.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.9/WildScaleSetup-1.1.9.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
@@ -96,7 +96,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 ## Status
 
-WildScale 1.1.8 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
+WildScale 1.1.9 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
 Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 
