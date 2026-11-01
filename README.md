@@ -5,7 +5,7 @@
 <p align="center"><strong>Frame one shot. We'll do the rest.</strong></p>
 
 <p align="center">
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.4/WildScaleSetup-1.1.4.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.1.5/WildScaleSetup-1.1.5.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -21,6 +21,9 @@ WildScale is a panel for Adobe Premiere Pro that reframes a horizontal edit for 
 
 - **Finds every cut.** Reads each frame, on your graphics card when the format allows it, and cuts video and audio on the timeline.
 - **Knows your speaker.** Set the framing once and matching shots across your cuts follow it.
+- **Removes black bars.** Finds bars inside your footage and crops exactly that much, only on the sides that have them.
+- **Reads split screens.** Keeps the crop off the seam, and shows both sides or follows the person.
+- **Follows your rules.** Each reference decides which graphics may show, and whether it may zoom out to clear them.
 - **Keeps titles whole.** Text that would leave the crop gets a small move or a clean two-layer back blur.
 - **Pastes your framing.** Matching shots get your exact Scale and Position, and you can copy them onto any selection.
 - **Works in your open sequence.** Clips change live on the timeline, with no new sequences, and you can stop whenever you like.
@@ -30,6 +33,14 @@ WildScale is a panel for Adobe Premiere Pro that reframes a horizontal edit for 
 - **Learns from your fixes.** It remembers the corrections you make and uses them on later runs.
 - **Works within your memory.** Settings checks your system and adjusts to the memory Premiere leaves free.
 - **Stays on your computer.** Frames are analyzed locally. Your footage is never uploaded.
+
+## How it works
+
+![A clip with black bars on top and bottom, before and after](assets/example-bars.svg)
+
+![A split screen cut by the crop, and the two fixes](assets/example-split.svg)
+
+![A graphic cut off by the canvas edge, and how a reference rule clears it](assets/example-graphics.svg)
 
 ## System requirements
 
@@ -65,7 +76,7 @@ macOS is not supported. Premiere Pro 26.0 to 26.5.1 is not supported.
 
 ## Install
 
-1. Download [`WildScaleSetup-1.1.4.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.4/WildScaleSetup-1.1.4.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.1.5.exe`](https://github.com/GSK95/WildScale/releases/download/1.1.5/WildScaleSetup-1.1.5.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
@@ -85,7 +96,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 ## Status
 
-WildScale 1.1.4 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
+WildScale 1.1.5 is a pre-release. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
 Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WildScale 1.1.4 User Guide</title>
+  <title>WildScale 1.1.5 User Guide</title>
   <meta name="description" content="Everything in the WildScale panel, from install to troubleshooting." />
   <link rel="icon" type="image/png" href="assets/wildscale-icon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -19,7 +19,7 @@
     </nav>
   </header>
   <main class="doc">
-<h1>WildScale 1.1.4 User Guide</h1>
+<h1>WildScale 1.1.5 User Guide</h1>
 <p>WildScale reframes a horizontal edit for vertical and social formats inside Adobe Premiere Pro. You frame a shot once, and it carries that framing through the rest of your timeline. This guide covers everything in the panel, from the first install to the odd problem you might run into.</p>
 <h2>What you need</h2>
 <ul>
@@ -31,7 +31,7 @@
 <p>A graphics card helps but is not required. WildScale uses it for text detection when it can, and uses the processor when it cannot. The top of the panel shows which one is active.</p>
 <h2>Installing</h2>
 <ol>
-<li>Run <code>WildScaleSetup-1.1.4.exe</code>. You do not need administrator rights.</li>
+<li>Run <code>WildScaleSetup-1.1.5.exe</code>. You do not need administrator rights.</li>
 <li>Restart Premiere Pro.</li>
 <li>Open the panel from the Window menu. In Premiere Pro 26.5.2 and later it is under UXP Plugins. In Premiere Pro 25.0 to 25.9 it is under Extensions.</li>
 </ol>
@@ -79,6 +79,16 @@
 <li><strong>Whole frame with blur:</strong> shows the entire shot over a blurred background.</li>
 </ul>
 <p>During Rescale, matching clips get the reference's exact values, unless a title, a hidden area or blur needs something else.</p>
+<p>Your references appear in a list under the buttons. Click a row to select that clip and move the playhead to it, and use <strong>Remove</strong> to drop one. A clip you choose as a reference always follows your choice, even when it looks like another reference.</p>
+<p>Each reference also keeps its own rules for the shots that match it:</p>
+<ul>
+<li><strong>Graphics: leave them as they fall:</strong> changes nothing.</li>
+<li><strong>Graphics: whole or gone, never cut off:</strong> a graphic is either fully on the canvas or fully off it.</li>
+<li><strong>Graphics: keep them out of the canvas:</strong> no graphic shows.</li>
+<li><strong>Graphics: keep them whole on the canvas:</strong> every graphic must fit.</li>
+<li><strong>May zoom out to frame size for this:</strong> allows the widest crop that still fills the canvas, when moving alone is not enough.</li>
+</ul>
+<p>Graphics here means what WildScale can read: titles, text and text-heavy pages. For a logo or a picture without text, use <strong>Must hide</strong> or <strong>Must show</strong> in Preview and selection. A rule that cannot be met leaves the shot as it was and counts under <strong>could not hide</strong>. The list is saved with the sequence.</p>
 <p>If several clips were moved the same way, select only the reference clip. <strong>Clear</strong> removes the references you added.</p>
 <p><strong>Copy Scale and Position</strong> reads those two values from the selected clip. <strong>Paste to selected</strong> applies them to the clips you select, as one undo step, like Paste Attributes for those two values.</p>
 <h2>4. Format</h2>
@@ -108,6 +118,9 @@
 <li><strong>Detect animated transitions and graphics:</strong> splits clips that hide transitions, split screens or graphics. The first scan of a video takes about 40 seconds per hour of footage, and later runs reuse it.</li>
 <li><strong>Shrink the shot when elements do not fit:</strong> allows the whole-frame view with a background.</li>
 <li><strong>Blurred background instead of black bars:</strong> builds the back blur.</li>
+<li><strong>Fix black bars and split screens by itself:</strong> zooms past bars or shows the whole picture, and keeps the crop off a split screen's seam.</li>
+<li><strong>Crop black bars inside the footage:</strong> adds a Crop effect when bars would show on the canvas.</li>
+<li><strong>Split screens:</strong> <strong>Show both sides with blur</strong>, or <strong>Follow the person's side</strong>.</li>
 </ul>
 <h2>7. This sequence</h2>
 <p>References, groups, copied framing and a list of what WildScale did are saved per sequence on your computer. They return when you select that sequence again, even after closing Premiere. <strong>Clear this sequence</strong> removes them.</p>
@@ -131,12 +144,36 @@
 </ul>
 <p>Saved marks are listed here, each with a <strong>Delete</strong> button.</p>
 <h2>Running Rescale again</h2>
-<p>WildScale remembers its plans per sequence. After you add or move a reference, only the clips that reference touches are reworked, and the rest stay as they are. Changing settings, marks, memory or a face preset reworks every clip. <strong>Rework every clip on the next Rescale</strong> in <strong>Options</strong> forces a full run.</p>
+<p>WildScale saves how every clip was cut and placed after each cut and each Rescale. Before the next Rescale it compares that with the timeline, and clips you moved by hand are learned as fixes. WildScale remembers its plans per sequence. After you add or move a reference, only the clips that reference touches are reworked, and the rest stay as they are. Changing settings, marks, memory or a face preset reworks every clip. <strong>Rework every clip on the next Rescale</strong> in <strong>Options</strong> forces a full run.</p>
 <h2>How the framing decisions work</h2>
 <p>When a title runs past the crop, WildScale tries a small sideways move that keeps the speaker in frame. If that is not enough, it cuts to the whole frame over a blurred background for as long as the title is on screen, then cuts back.</p>
 <p>Back blur always uses two layers. The lower clip sits at Scale 500 with Gaussian Blur and lowered opacity for soft ambient color. The upper clip fits the frame and has a gentle drop shadow. Premiere's Scale to Frame Size switch is not available to plugins, so WildScale sets the Scale value that gives the same result.</p>
 <p>When a clip holds an animated transition, WildScale splits it into takes and frames each one separately, with a hard cut at the transition.</p>
 <p>Running Rescale again does not add a second background. It only reframes the clips above the existing one.</p>
+<h2>Worked examples</h2>
+<p>These drawings show what each feature does. Every example starts from a normal Rescale.</p>
+<p><strong>Black bars on top and bottom.</strong> Your clip has bars inside the video itself, and the whole picture sits on a blurred background.</p>
+<img src="assets/example-bars.svg" alt="A clip with black bars on top and bottom, before and after" loading="lazy" />
+<p>WildScale measures the bars on several frames of the clip and adds a Crop effect with exactly that much, plus 0.3 percent so no dark line stays. Bars are often about 10 to 11 percent, and often less. The report shows <strong>black bars cropped</strong>.</p>
+<p><strong>Black bars at the sides.</strong> WildScale only crops the sides when bars are really there.</p>
+<img src="assets/example-sides.svg" alt="A clip with black bars at the sides, before and after" loading="lazy" />
+<p>Left and right are measured on their own, and the picture then grows to fill the canvas width.</p>
+<p><strong>A split screen.</strong> A normal crop lands on the seam and cuts both shots.</p>
+<img src="assets/example-split.svg" alt="A split screen cut by the crop, and the two fixes" loading="lazy" />
+<p>In <strong>Options</strong>, <strong>Split screens</strong> chooses the fix. <strong>Show both sides with blur</strong> keeps the whole picture. <strong>Follow the person's side</strong> crops the panel that holds a face and leaves the seam out.</p>
+<p><strong>A graphic cut off by the canvas.</strong> Set the rule on a reference, and it applies to every shot that matches it.</p>
+<img src="assets/example-graphics.svg" alt="A graphic cut off by the canvas edge, and how the rules clear it" loading="lazy" />
+<p><strong>Whole or gone</strong> moves the crop until the graphic is fully out or fully in, and the person stays in frame. With <strong>May zoom out to frame size</strong>, WildScale can also go to the widest crop that still fills the canvas, for shots a move alone cannot fix.</p>
+<p><strong>A clean run from raw footage.</strong></p>
+<ol>
+<li>Duplicate your sequence and put the raw clip on V1.</li>
+<li>Click <strong>Cut selected clips</strong>. The status shows <code>Finding cuts 34/100…</code>, then <code>Made 268 cuts (graphics card)</code>.</li>
+<li>Frame one speaker shot by hand, select it, and click <strong>Remember selected clips</strong> with <strong>Main speaker</strong>.</li>
+<li>Find a shot that should stay whole, select it, and remember it with <strong>Whole frame with blur</strong>.</li>
+<li>Click <strong>Rescale</strong>. The report shows lines such as <code>black bars cropped: 21</code> and <code>canvas problems fixed: 14</code>.</li>
+<li>Fix any shot by hand. On the next Rescale, WildScale learns that fix without you clicking anything.</li>
+<li>Click a row in the <strong>References</strong> list to jump straight to that clip.</li>
+</ol>
 <h2>Your privacy</h2>
 <p>Frames are analyzed on your computer by the local service, which only listens on your own machine. Your footage is never uploaded.</p>
 <h2>Troubleshooting</h2>
@@ -156,12 +193,15 @@
 <li>Windows only for now.</li>
 </ul>
 <h2>Version history</h2>
+<p><strong>1.1.5:</strong> WildScale now finds black bars and split screens, crops the bars and fixes the framing by itself. Each reference has its own rules for graphics. Reference list with one-click jumps. Hand edits are learned on the next Rescale. A clip you choose as a reference always follows your choice. Rescale no longer stops on clips Premiere has not finished placing.</p>
 <p><strong>1.1.4:</strong> If the graphics card finds no cuts, WildScale reads the clip again on the processor. The status text shows what was read.</p>
 <p><strong>1.1.3:</strong> Cut detection no longer needs FFmpeg. A built-in decoder takes over, on your graphics card when it can.</p>
 <p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
+<p><strong>1.1.5:</strong> WildScale now finds black bars and split screens, crops the bars and fixes the framing by itself. Each reference has its own rules for graphics. Reference list with one-click jumps. Hand edits are learned on the next Rescale. A clip you choose as a reference always follows your choice. Rescale no longer stops on clips Premiere has not finished placing.</p>
 <p><strong>1.1.4:</strong> If the graphics card finds no cuts, WildScale reads the clip again on the processor. The status text shows what was read.</p>
 <p><strong>1.1.3:</strong> Cut detection no longer needs FFmpeg. A built-in decoder takes over, on your graphics card when it can.</p>
 <p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
+<p><strong>1.1.5:</strong> WildScale now finds black bars and split screens, crops the bars and fixes the framing by itself. Each reference has its own rules for graphics. Reference list with one-click jumps. Hand edits are learned on the next Rescale. A clip you choose as a reference always follows your choice. Rescale no longer stops on clips Premiere has not finished placing.</p>
 <p><strong>1.1.4:</strong> If the graphics card finds no cuts, WildScale reads the clip again on the processor. The status text shows what was read.</p>
 <p><strong>1.1.3:</strong> Cut detection no longer needs FFmpeg. A built-in decoder takes over, on your graphics card when it can.</p>
 <p><strong>1.1.2:</strong> Cut detection shows progress and can be stopped. Premiere's detection takes over by itself when WildScale's cannot run, fails, or finds no cuts.</p>
