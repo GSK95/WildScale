@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScale-1.3.0-mac-x86_64.pkg">Download for Mac</a> ·
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.2.0/WildScaleSetup-1.2.0.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScaleSetup-1.3.0.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -70,7 +70,7 @@ The Mac version has been tested with Premiere Pro 26.0 on macOS 15 on an Intel M
 - **Below 4 GB of free memory**, WildScale switches to **Memory saver**. Below 1 GB, analysis pauses for up to 20 seconds to leave room for Premiere.
 - **Without a supported graphics card**, everything still works on the processor, but text detection is slower.
 - **ProRes and similar formats** are decoded on the processor, because graphics cards generally cannot decode them.
-- **Low latency** in **Settings** is the lightest mode for older computers. It is in the Mac version now and comes to Windows in the next release.
+- **Low latency** in **Settings** is the lightest mode for older computers. On a computer with four cores or fewer, **Auto** picks it when memory runs low.
 - **The Mac warning** appears because the package is not notarized by Apple yet. Open **System Settings > Privacy & Security** and choose **Open Anyway**.
 - **The Windows warning** appears because the installer has a self-signed signature. Choose **More info**, then **Run anyway**.
 - **In Premiere Pro 25.0 to 26.5.1**, you cannot color single clips, and the new cutting and paste tools are not fully tested yet.
@@ -81,13 +81,13 @@ The Mac version has been tested with Premiere Pro 26.0 on macOS 15 on an Intel M
 
 ### Windows
 
-1. Download [`WildScaleSetup-1.2.0.exe`](https://github.com/GSK95/WildScale/releases/download/1.2.0/WildScaleSetup-1.2.0.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.3.0.exe`](https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScaleSetup-1.3.0.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
    - Premiere Pro 25.0 to 26.5.1: **Extensions**
 
-The installer also adds a small launcher that runs when you sign in to Windows. It starts the analysis service when the panel asks, so there is nothing to start by hand.
+The installer also adds WildScale Monitor, a film strip in the system tray that runs when you sign in to Windows. It starts the analysis service when the panel asks, so there is nothing to start by hand. It is dim while the service sleeps, solid when it is awake, and rolls while a job runs.
 
 ### Mac
 
@@ -109,7 +109,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 ## Status
 
-WildScale is a pre-release: 1.3.0 for Mac and 1.2.0 for Windows. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
+WildScale 1.3.0 is a pre-release for Windows and Mac. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
 Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 

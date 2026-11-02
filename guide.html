@@ -24,14 +24,14 @@
 <h2>What you need</h2>
 <ul>
 <li>Adobe Premiere Pro 25.0 or later</li>
-<li>On Windows: Windows 10 or 11, 64-bit, and WildScale Setup 1.2.0</li>
+<li>On Windows: Windows 10 or 11, 64-bit, and WildScale Setup 1.3.0</li>
 <li>On a Mac: macOS 13 or later on an Intel processor, and the WildScale 1.3.0 package. It has been tested with Premiere Pro 26.0 on macOS 15. Apple silicon Macs are not tested.</li>
 <li>FFmpeg, for faster cut detection and for motion detection. Without it, a built-in decoder finds the cuts and each clip is framed as a whole.</li>
 </ul>
 <p>A graphics card helps but is not required. WildScale uses it for text detection when it can, and uses the processor when it cannot. The top of the panel shows which one is active.</p>
 <h2>Installing</h2>
 <ol>
-<li>On Windows, run <code>WildScaleSetup-1.2.0.exe</code>. You do not need administrator rights. For a Mac, see below.</li>
+<li>On Windows, run <code>WildScaleSetup-1.3.0.exe</code>. You do not need administrator rights. For a Mac, see below.</li>
 <li>Restart Premiere Pro.</li>
 <li>Open the panel from the Window menu. In Premiere Pro 26.5.2 and later it is under UXP Plugins. In Premiere Pro 25.0 to 26.5.1 it is under Extensions.</li>
 </ol>
@@ -46,13 +46,13 @@
 </ol>
 <p>macOS may tell you that WildScale Monitor can run in the background. That is expected. You can manage it in <strong>System Settings &gt; General &gt; Login Items & Extensions</strong>.</p>
 <h3>WildScale Monitor</h3>
-<p>On a Mac, the launcher is a small film strip in the menu bar. It shows what the service is doing:</p>
+<p>The launcher is a small film strip in the Windows system tray or the Mac menu bar. On Windows, it may be under the arrow beside the clock. It shows what the service is doing:</p>
 <ul>
 <li><strong>Dim:</strong> the service is asleep and wakes when the panel needs it.</li>
 <li><strong>Solid:</strong> the service is awake.</li>
-<li><strong>Rolling, with a percentage:</strong> a job is running.</li>
+<li><strong>Rolling, with a percentage:</strong> a job is running. On Windows, point at the icon to see the percentage.</li>
 </ul>
-<p>Click it to see the current step, start or stop the service, or open the last error. If you quit it, it comes back the next time you sign in.</p>
+<p>Click it to see the current step, start or stop the service, or open the last error. If you quit it, the panel cannot start the service until it is back. It returns the next time you sign in, and on Windows you can also open <strong>WildScale Monitor</strong> from the Start menu.</p>
 <h3>FFmpeg on a Mac</h3>
 <p>The package does not include FFmpeg. WildScale looks for it on the system path, in <code>/usr/local/bin</code> and in <code>/opt/homebrew/bin</code>. With Homebrew, run <code>brew install ffmpeg</code>, then click <strong>Stop service</strong> in WildScale Monitor.</p>
 <h3>Removing WildScale from a Mac</h3>
@@ -217,7 +217,7 @@
 <li>The Mac version needs an Intel processor and is not notarized by Apple yet.</li>
 </ul>
 <h2>Version history</h2>
-<p><strong>1.3.0:</strong> First Mac version, with a styled installer, WildScale Monitor in the menu bar and the Low latency mode.</p>
+<p><strong>1.3.0:</strong> First Mac version. On both systems: a styled installer, WildScale Monitor and the Low latency mode.</p>
 <p><strong>1.2.0:</strong> Brings together the automatic canvas fixes, rules per reference, the Mr.Rescale preset and support for Premiere Pro 25.0 and later.</p>
 <p><strong>1.1.9:</strong> Rescale no longer stops on a failed system check, and service errors now say what went wrong.</p>
 <p><strong>1.1.8:</strong> Cut selected clips always uses WildScale's own detection, and the status text says why when it cannot run. Premiere's detection only runs when you tick it. Marks in Preview can now be moved, resized and set to exact pixel values.</p>
