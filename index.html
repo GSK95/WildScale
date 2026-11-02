@@ -110,7 +110,7 @@
   </footer>
   <script>
     // Apple visitors get the Mac download first; everyone else keeps the page as written.
-    if (/Mac|iPhone|iPad|iPod/.test(navigator.userAgentData?.platform || navigator.platform || navigator.userAgent)) {
+    if (/mac|iphone|ipad|ipod/i.test(navigator.userAgentData?.platform || navigator.platform || navigator.userAgent)) {
       const download = document.getElementById("download");
       const other = document.getElementById("otherDownload");
       const windowsLink = download.href;
