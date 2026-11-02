@@ -29,9 +29,10 @@
         <h1>Frame one shot.<br /><span>We'll do the rest.</span></h1>
         <p class="lead">WildScale cuts your raw video, then reframes it for Reels, clip by clip, while you watch it happen on your timeline.</p>
         <div class="actions">
-          <a class="button primary" href="https://github.com/GSK95/WildScale/releases/download/1.2.0/WildScaleSetup-1.2.0.exe">Download for Windows</a>
+          <a class="button primary" id="download" href="https://github.com/GSK95/WildScale/releases/download/1.2.0/WildScaleSetup-1.2.0.exe">Download for Windows</a>
           <a class="button secondary" href="guide.html">See how it works</a>
-          <span class="status">Version 1.2.0 · 128 MB · <a href="https://github.com/GSK95/WildScale/releases/tag/1.2.0">Release notes</a></span>
+          <span class="status"><span id="downloadInfo">Version 1.2.0 · 128 MB</span> · <a id="releaseNotes" href="https://github.com/GSK95/WildScale/releases/tag/1.2.0">Release notes</a></span>
+          <span class="status otherDownload">Also available: <a id="otherDownload" href="https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScale-1.3.0-mac-x86_64.pkg">Download for Mac</a></span>
         </div>
       </div>
       <figure class="shot">
@@ -108,6 +109,19 @@
     <p>© 2026 Drugela. WildScale is an independent product and is not affiliated with or endorsed by Adobe. Adobe and Premiere Pro are trademarks of Adobe Inc.</p>
   </footer>
   <script>
+    // Apple visitors get the Mac download first; everyone else keeps the page as written.
+    if (/Mac|iPhone|iPad|iPod/.test(navigator.userAgentData?.platform || navigator.platform || navigator.userAgent)) {
+      const download = document.getElementById("download");
+      const other = document.getElementById("otherDownload");
+      const windowsLink = download.href;
+      download.href = other.href;
+      download.textContent = "Download for Mac";
+      other.href = windowsLink;
+      other.textContent = "Download for Windows";
+      document.getElementById("downloadInfo").textContent = "Version 1.3.0 · 100 MB · Intel Mac";
+      document.getElementById("releaseNotes").href = "https://github.com/GSK95/WildScale/releases/tag/1.3.0";
+    }
+
     const tourVideo = document.getElementById("tourVideo");
     const tourPlay = document.getElementById("tourPlay");
     tourPlay.addEventListener("click", () => {
