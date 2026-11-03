@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WildScale 1.3.0 User Guide</title>
+  <title>WildScale 1.3.1 User Guide</title>
   <meta name="description" content="Everything in the WildScale panel, from install to troubleshooting." />
   <link rel="icon" type="image/png" href="assets/wildscale-icon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -19,19 +19,19 @@
     </nav>
   </header>
   <main class="doc">
-<h1>WildScale 1.3.0 User Guide</h1>
+<h1>WildScale 1.3.1 User Guide</h1>
 <p>WildScale reframes a horizontal edit for vertical and social formats inside Adobe Premiere Pro. You frame a shot once, and it carries that framing through the rest of your timeline. This guide covers everything in the panel, from the first install to the odd problem you might run into.</p>
 <h2>What you need</h2>
 <ul>
 <li>Adobe Premiere Pro 25.0 or later</li>
-<li>On Windows: Windows 10 or 11, 64-bit, and WildScale Setup 1.3.0</li>
+<li>On Windows: Windows 10 or 11, 64-bit, and WildScale Setup 1.3.1</li>
 <li>On a Mac: macOS 13 or later on an Intel processor, and the WildScale 1.3.0 package. It has been tested with Premiere Pro 26.0 on macOS 15. Apple silicon Macs are not tested.</li>
 <li>FFmpeg, for faster cut detection and for motion detection. Without it, a built-in decoder finds the cuts and each clip is framed as a whole.</li>
 </ul>
 <p>A graphics card helps but is not required. WildScale uses it for text detection when it can, and uses the processor when it cannot. The top of the panel shows which one is active.</p>
 <h2>Installing</h2>
 <ol>
-<li>On Windows, run <code>WildScaleSetup-1.3.0.exe</code>. You do not need administrator rights. For a Mac, see below.</li>
+<li>On Windows, run <code>WildScaleSetup-1.3.1.exe</code>. Close Premiere Pro first. You do not need administrator rights. For a Mac, see below.</li>
 <li>Restart Premiere Pro.</li>
 <li>Open the panel from the Window menu. In Premiere Pro 26.5.2 and later it is under UXP Plugins. In Premiere Pro 25.0 to 26.5.1 it is under Extensions.</li>
 </ol>
@@ -77,7 +77,7 @@
 <li><strong>Version:</strong> shown beside the logo.</li>
 </ul>
 <h2>1. Scene Edit Detection</h2>
-<p><strong>Cut selected clips</strong> reads every frame of the selected clips, or of all clips when none are selected, and cuts them where the shots change. It decodes on your graphics card when the video format allows it. Without FFmpeg, it uses a slower built-in decoder. The panel shows progress, and <strong>Stop</strong> ends the search for cuts. If detection cannot run, the status text says why. Premiere's detection only runs when you tick <strong>Use Premiere's own detection instead</strong>.</p>
+<p><strong>Cut selected clips</strong> reads every frame of the selected clips, or of all clips when none are selected, and cuts them where the shots change. Each cut lands on the first frame of the new shot, also in phone video with a varying frame rate. It decodes on your graphics card when the video format allows it. Without FFmpeg, it uses a slower built-in decoder. The panel shows progress, and <strong>Stop</strong> ends the search for cuts. If detection cannot run, the status text says why. Premiere's detection only runs when you tick <strong>Use Premiere's own detection instead</strong>.</p>
 <p>Premiere gives UXP plugins no razor, so in Premiere Pro 26 the clip is laid down again from its source file, piece by piece, video and audio, keeping its Scale and Position. Other effects on that clip are not kept, clips with changed speed stay whole, and undoing takes several steps. Use it on raw footage in a duplicate sequence. In Premiere Pro 25, the real razor is used.</p>
 <h2>2. Preview and selection</h2>
 <p><strong>Capture frame</strong> loads the shot under the playhead straight from the source file, so you see the whole frame and not only the crop. Press <strong>C</strong> to do the same while the panel is active. In the timeline, C stays Premiere's own Razor key.</p>
@@ -152,7 +152,7 @@
 <li><strong>Full:</strong> checks text about every 1.5 seconds.</li>
 <li><strong>Balanced:</strong> checks less often and frees memory after each run. Very short titles can be missed in long clips.</li>
 <li><strong>Memory saver:</strong> reads one clip stream at a time and checks about every 4 seconds. Look over clips with text afterward.</li>
-<li><strong>Low latency:</strong> the lightest mode, for older or slower computers. It checks the fewest frames, skips the motion scan and uses two processor threads so Premiere stays responsive. Short titles and animated changes inside a clip can be missed, so check the result. On a computer with four cores or fewer, <strong>Auto</strong> picks it when under 4 GB of memory is free. Available on Mac in 1.3.0; Windows gets it in the next release.</li>
+<li><strong>Low latency:</strong> the lightest mode, for older or slower computers. It checks the fewest frames, skips the motion scan and uses two processor threads so Premiere stays responsive. Short titles and animated changes inside a clip can be missed, so check the result. On a computer with four cores or fewer, <strong>Auto</strong> picks it when under 4 GB of memory is free.</li>
 </ul>
 <p>When less than 1 GB of memory is free, analysis pauses for up to 20 seconds to leave Premiere room.</p>
 <h2>9. Appearance</h2>
@@ -217,6 +217,7 @@
 <li>The Mac version needs an Intel processor and is not notarized by Apple yet.</li>
 </ul>
 <h2>Version history</h2>
+<p><strong>1.3.1:</strong> Windows: the service no longer stops while you capture a frame, cuts land on the exact frame, and the service opens the graphics card only when an analysis starts.</p>
 <p><strong>1.3.0:</strong> First Mac version. On both systems: a styled installer, WildScale Monitor and the Low latency mode.</p>
 <p><strong>1.2.0:</strong> Brings together the automatic canvas fixes, rules per reference, the Mr.Rescale preset and support for Premiere Pro 25.0 and later.</p>
 <p><strong>1.1.9:</strong> Rescale no longer stops on a failed system check, and service errors now say what went wrong.</p>

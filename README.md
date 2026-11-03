@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScale-1.3.0-mac-x86_64.pkg">Download for Mac</a> ·
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScaleSetup-1.3.0.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.3.1/WildScaleSetup-1.3.1.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -81,7 +81,7 @@ The Mac version has been tested with Premiere Pro 26.0 on macOS 15 on an Intel M
 
 ### Windows
 
-1. Download [`WildScaleSetup-1.3.0.exe`](https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScaleSetup-1.3.0.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.3.1.exe`](https://github.com/GSK95/WildScale/releases/download/1.3.1/WildScaleSetup-1.3.1.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
@@ -109,7 +109,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 ## Status
 
-WildScale 1.3.0 is a pre-release for Windows and Mac. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
+WildScale 1.3.1 for Windows and 1.3.0 for Mac are pre-releases. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
 Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 
