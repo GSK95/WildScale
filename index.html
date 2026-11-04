@@ -27,17 +27,207 @@
       <div>
         <p class="eyebrow">For Adobe Premiere Pro</p>
         <h1>Frame one shot.<br /><span>We'll do the rest.</span></h1>
-        <p class="lead">WildScale cuts your raw video, then reframes it for Reels, clip by clip, while you watch it happen on your timeline.</p>
+        <p class="lead">WildScale cuts your raw video, sees what is in every shot, then reframes it for Reels, clip by clip, while you watch it happen on your timeline.</p>
         <div class="actions">
-          <a class="button primary" id="download" href="https://github.com/GSK95/WildScale/releases/download/1.3.1/WildScaleSetup-1.3.1.exe">Download for Windows</a>
-          <a class="button secondary" href="guide.html">See how it works</a>
-          <span class="status"><span id="downloadInfo">Version 1.3.1 · 129 MB</span> · <a id="releaseNotes" href="https://github.com/GSK95/WildScale/releases/tag/1.3.1">Release notes</a></span>
+          <a class="button primary" id="download" href="https://github.com/GSK95/WildScale/releases/download/1.3.5/WildScaleSetup-1.3.5.exe">Download for Windows</a>
+          <a class="button secondary" href="#new">What's new in 1.3.5</a>
+          <span class="status"><span id="downloadInfo">Version 1.3.5 · 173 MB</span> · <a id="releaseNotes" href="https://github.com/GSK95/WildScale/releases/tag/1.3.5">Release notes</a></span>
           <span class="status otherDownload">Also available: <a id="otherDownload" href="https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScale-1.3.0-mac-x86_64.pkg">Download for Mac</a></span>
         </div>
       </div>
       <figure class="shot">
         <img src="assets/panel.png" alt="The WildScale panel with Scene Edit Detection open" width="540" height="900" />
       </figure>
+    </section>
+
+    <section class="showcase" id="new" aria-labelledby="newTitle">
+      <p class="eyebrow">New in 1.3.5</p>
+      <h2 id="newTitle">Six things WildScale does now</h2>
+      <div class="deck" id="deck">
+        <ol class="deckTabs" role="tablist">
+          <li><button type="button" role="tab" aria-selected="true" data-slide="0"><span>01</span>Auto detect</button></li>
+          <li><button type="button" role="tab" aria-selected="false" data-slide="1"><span>02</span>Smart fades</button></li>
+          <li><button type="button" role="tab" aria-selected="false" data-slide="2"><span>03</span>Stop and undo</button></li>
+          <li><button type="button" role="tab" aria-selected="false" data-slide="3"><span>04</span>Motion stays yours</button></li>
+          <li><button type="button" role="tab" aria-selected="false" data-slide="4"><span>05</span>Two graphics cards</button></li>
+          <li><button type="button" role="tab" aria-selected="false" data-slide="5"><span>06</span>Learns your edits</button></li>
+        </ol>
+
+        <div class="deckStage">
+          <article class="slide active" role="tabpanel" aria-label="Auto detect">
+            <svg class="art" viewBox="0 0 560 340" role="img" aria-label="The playhead stops on a shot, WildScale outlines two people, their faces, a car and a title, and a click turns one face into a Must show mark">
+              <rect width="560" height="340" rx="10" fill="#1d1a18" />
+              <g transform="translate(40 26)">
+                <rect width="480" height="250" rx="4" fill="#3b4652" />
+                <rect y="150" width="480" height="100" fill="#4d473f" />
+                <rect x="250" y="70" width="230" height="110" fill="#5a6672" />
+                <g class="car"><rect x="300" y="150" width="150" height="46" rx="18" fill="#9aa7b4" /><rect x="326" y="128" width="88" height="34" rx="12" fill="#7f8c99" /><circle cx="330" cy="198" r="13" fill="#1d1a18" /><circle cx="422" cy="198" r="13" fill="#1d1a18" /></g>
+                <rect x="60" y="112" width="96" height="138" rx="26" fill="#2e3440" /><circle cx="108" cy="88" r="30" fill="#e0b48e" />
+                <rect x="190" y="124" width="86" height="126" rx="24" fill="#6b3f35" /><circle cx="233" cy="102" r="27" fill="#c9926b" />
+                <rect x="96" y="214" width="290" height="24" rx="3" fill="#f4eee6" /><rect x="110" y="222" width="150" height="8" rx="2" fill="#1d1a18" />
+                <g class="found f1"><rect x="56" y="54" width="106" height="196" fill="none" stroke="#4f9dff" stroke-dasharray="5 4" stroke-width="1.6" /><rect x="56" y="40" width="70" height="14" fill="#4f9dff" /><text x="60" y="51" font-size="10" fill="#000">person 92%</text></g>
+                <g class="found f2"><rect x="186" y="72" width="94" height="178" fill="none" stroke="#4f9dff" stroke-dasharray="5 4" stroke-width="1.6" /><rect x="186" y="58" width="70" height="14" fill="#4f9dff" /><text x="190" y="69" font-size="10" fill="#000">person 88%</text></g>
+                <g class="found f3"><rect x="292" y="124" width="166" height="88" fill="none" stroke="#4f9dff" stroke-dasharray="5 4" stroke-width="1.6" /><rect x="392" y="110" width="52" height="14" fill="#4f9dff" /><text x="396" y="121" font-size="10" fill="#000">car 74%</text></g>
+                <g class="found f4"><rect x="204" y="74" width="58" height="58" fill="none" stroke="#ffd23a" stroke-dasharray="5 4" stroke-width="1.6" /><rect x="236" y="132" width="26" height="12" fill="#ffd23a" /><text x="238" y="142" font-size="9" fill="#000">face</text></g>
+                <g class="found f5"><rect x="94" y="212" width="294" height="28" fill="none" stroke="#f2a33a" stroke-dasharray="5 4" stroke-width="1.6" /><rect x="352" y="240" width="32" height="12" fill="#f2a33a" /><text x="355" y="250" font-size="9" fill="#000">title</text></g>
+                <g class="adopted"><rect x="78" y="56" width="62" height="64" fill="rgba(53,208,127,0.2)" stroke="#35d07f" stroke-width="2.4" /><rect x="78" y="120" width="64" height="15" fill="#35d07f" /><text x="82" y="132" font-size="10" fill="#04210f">Must show</text></g>
+                <g class="found f6"><rect x="78" y="56" width="62" height="64" fill="none" stroke="#ffd23a" stroke-dasharray="5 4" stroke-width="1.6" /></g>
+                <path class="cursor" d="M0 0l0 20l5 -5l4 9l4 -2l-4 -9l7 0z" fill="#f4eee6" stroke="#141211" stroke-width="1.2" />
+              </g>
+              <g transform="translate(40 296)">
+                <rect width="480" height="16" rx="3" fill="#2a2522" />
+                <rect width="150" height="16" rx="3" fill="#3f5c7a" /><rect x="152" width="190" height="16" rx="3" fill="#5c4a3a" /><rect x="344" width="136" height="16" rx="3" fill="#3f5c7a" />
+                <g class="playhead"><rect x="-1" y="-8" width="2" height="30" fill="#e2a568" /><path d="M-6 -12h12l-6 7z" fill="#e2a568" /></g>
+                <text class="still" x="480" y="34" text-anchor="end" font-size="11" fill="#bdb2a6">Playhead rests · frame read in about a second</text>
+              </g>
+            </svg>
+            <div class="copy">
+              <h3>It sees the shot when you stop</h3>
+              <p>Rest the playhead on a frame and WildScale shows what is in it: people, faces, cars, phones, titles. Click one to make it a Must show or Must hide mark, or leave them and let WildScale decide.</p>
+              <p class="fine">Turn auto detect off whenever you like. <kbd>Shift</kbd> + <kbd>C</kbd> still captures the frame and finds what is in it.</p>
+            </div>
+          </article>
+
+          <article class="slide" role="tabpanel" aria-label="Smart fades">
+            <svg class="art" viewBox="0 0 560 340" role="img" aria-label="A timeline with a dissolve cut in its middle and a fade through black cut in the black">
+              <defs>
+                <linearGradient id="dissolve" x1="0" x2="1"><stop offset="0" stop-color="#c98f6a" /><stop offset="1" stop-color="#4f7da6" /></linearGradient>
+                <linearGradient id="toBlack" x1="0" x2="1"><stop offset="0" stop-color="#4f7da6" /><stop offset="0.45" stop-color="#050505" /><stop offset="0.55" stop-color="#050505" /><stop offset="1" stop-color="#6f8a5a" /></linearGradient>
+              </defs>
+              <rect width="560" height="340" rx="10" fill="#1d1a18" />
+              <text x="40" y="56" font-size="13" fill="#bdb2a6">One clip, three shots, two soft transitions</text>
+              <g transform="translate(40 86)">
+                <rect width="110" height="90" fill="#c98f6a" /><rect x="110" width="90" height="90" fill="url(#dissolve)" /><rect x="200" width="80" height="90" fill="#4f7da6" /><rect x="280" width="120" height="90" fill="url(#toBlack)" /><rect x="400" width="80" height="90" fill="#6f8a5a" />
+                <rect width="480" height="90" fill="none" stroke="rgba(244,238,230,0.25)" />
+                <g class="scan"><rect width="6" height="90" fill="rgba(226,165,104,0.55)" /></g>
+                <g class="cutA"><path d="M155 -14v118" stroke="#f4eee6" stroke-width="2.4" /><path d="M149 -20h12l-6 7z" fill="#f4eee6" /></g>
+                <g class="cutB"><path d="M340 -14v118" stroke="#f4eee6" stroke-width="2.4" /><path d="M334 -20h12l-6 7z" fill="#f4eee6" /></g>
+              </g>
+              <g transform="translate(40 206)"><g class="labelA"><rect width="230" height="76" rx="8" fill="#26211e" /><text x="14" y="28" font-size="14" font-weight="600" fill="#f4eee6">Dissolve</text><text x="14" y="50" font-size="12" fill="#bdb2a6">Cut where the new shot</text><text x="14" y="66" font-size="12" fill="#bdb2a6">reaches half of the picture</text></g></g>
+              <g transform="translate(290 206)"><g class="labelB"><rect width="230" height="76" rx="8" fill="#26211e" /><text x="14" y="28" font-size="14" font-weight="600" fill="#f4eee6">Fade through black</text><text x="14" y="50" font-size="12" fill="#bdb2a6">Cut in the middle of the black,</text><text x="14" y="66" font-size="12" fill="#bdb2a6">so each shot gets its own framing</text></g></g>
+            </svg>
+            <div class="copy">
+              <h3>Cuts inside dissolves and fades</h3>
+              <p>Scene Edit Detection now recognizes soft transitions. A dissolve is cut where the new shot takes over, and a fade through black is cut in the black, so the shot after it can be rescaled on its own.</p>
+              <p class="fine">A slow zoom or a lone fade from black is not a cut, so it stays whole.</p>
+            </div>
+          </article>
+
+          <article class="slide" role="tabpanel" aria-label="Stop and undo">
+            <svg class="art" viewBox="0 0 560 340" role="img" aria-label="Clips are reframed one by one, Stop is pressed, and every clip goes back to how it was">
+              <rect width="560" height="340" rx="10" fill="#1d1a18" />
+              <text x="40" y="56" font-size="13" fill="#bdb2a6">V1 · your open sequence</text>
+              <g transform="translate(40 76)">
+                <g class="clip c1"><rect width="88" height="54" rx="4" class="raw" /><rect width="88" height="54" rx="4" class="done" /></g>
+                <g class="clip c2" transform="translate(98 0)"><rect width="88" height="54" rx="4" class="raw" /><rect width="88" height="54" rx="4" class="done" /></g>
+                <g class="clip c3" transform="translate(196 0)"><rect width="88" height="54" rx="4" class="raw" /><rect width="88" height="54" rx="4" class="done" /></g>
+                <g class="clip c4" transform="translate(294 0)"><rect width="88" height="54" rx="4" class="raw" /></g>
+                <g class="clip c5" transform="translate(392 0)"><rect width="88" height="54" rx="4" class="raw" /></g>
+                <rect y="62" width="480" height="22" rx="3" fill="#2f3b2c" />
+              </g>
+              <g transform="translate(40 190)">
+                <rect width="210" height="40" rx="6" fill="#26211e" stroke="rgba(244,238,230,0.12)" />
+                <text x="16" y="25" font-size="13" fill="#bdb2a6">Rescale · clip 4 of 5</text>
+                <g class="stopBtn"><rect x="226" width="90" height="40" rx="6" fill="#d9675c" /><text x="271" y="25" text-anchor="middle" font-size="14" font-weight="600" fill="#1d1a18">Stop</text></g>
+                <text class="undone" x="0" y="80" font-size="15" fill="#f4eee6">Stopped. All 3 clips are back as they were.</text>
+                <text class="undone" x="0" y="104" font-size="12" fill="#bdb2a6">Scale, Position, crops, blur layers and cuts from this run</text>
+              </g>
+            </svg>
+            <div class="copy">
+              <h3>Stop means stop, and it cleans up</h3>
+              <p>Press Stop in the panel and the run halts at once. Everything the run already changed is put back: Scale and Position, crops, blur layers and the cuts it made.</p>
+              <p class="fine">Your timeline is never left half done, so you can stop whenever something looks wrong.</p>
+            </div>
+          </article>
+
+          <article class="slide" role="tabpanel" aria-label="Motion stays yours">
+            <svg class="art" viewBox="0 0 560 340" role="img" aria-label="A cut piece selected at the playhead, linked to its sound, with Scale and Position open in Effect Controls">
+              <rect width="560" height="340" rx="10" fill="#1d1a18" />
+              <g transform="translate(40 40)">
+                <text y="0" font-size="13" fill="#bdb2a6">Timeline</text>
+                <rect y="14" width="230" height="50" rx="4" fill="#3f5c7a" /><rect x="236" y="14" width="244" height="50" rx="4" fill="#3f5c7a" class="picked" />
+                <rect y="70" width="230" height="28" rx="4" fill="#2f5a3a" /><rect x="236" y="70" width="244" height="28" rx="4" fill="#2f5a3a" class="picked" />
+                <text x="250" y="45" font-size="12" fill="#f4eee6">Shot 2</text>
+                <path d="M236 64v6" stroke="#e2a568" stroke-width="2" />
+                <g transform="translate(450 30)"><circle r="9" fill="#e2a568" /><path d="M-4 0h8M-2 -3l-3 3l3 3M2 -3l3 3l-3 3" stroke="#1d1a18" stroke-width="1.6" fill="none" /></g>
+                <g class="playhead2"><rect x="300" y="6" width="2" height="100" fill="#e2a568" /></g>
+              </g>
+              <g transform="translate(40 168)">
+                <rect width="480" height="136" rx="8" fill="#26211e" stroke="rgba(244,238,230,0.12)" />
+                <text x="16" y="28" font-size="13" font-weight="600" fill="#f4eee6">Effect Controls · Motion</text>
+                <text x="16" y="62" font-size="13" fill="#bdb2a6">Scale</text>
+                <rect x="120" y="46" width="90" height="24" rx="4" fill="#141211" /><text class="val v1" x="132" y="63" font-size="13" fill="#4f9dff">200.0</text><text class="val v2" x="132" y="63" font-size="13" fill="#4f9dff">214.0</text>
+                <text x="16" y="98" font-size="13" fill="#bdb2a6">Position</text>
+                <rect x="120" y="82" width="140" height="24" rx="4" fill="#141211" /><text class="val v1" x="132" y="99" font-size="13" fill="#4f9dff">864.0   1080.0</text><text class="val v2" x="132" y="99" font-size="13" fill="#4f9dff">812.0   1080.0</text>
+                <text x="300" y="62" font-size="12" fill="#bdb2a6">Select at playhead: one clip,</text>
+                <text x="300" y="80" font-size="12" fill="#bdb2a6">still linked to its sound,</text>
+                <text x="300" y="98" font-size="12" fill="#bdb2a6">ready to drag in the monitor</text>
+              </g>
+            </svg>
+            <div class="copy">
+              <h3>Every cut piece stays easy to touch</h3>
+              <p>After a cut, each piece is linked to its own sound and selects like any clip. Select at playhead, then change Scale and Position in Effect Controls or drag in the Program Monitor, with your usual shortcuts.</p>
+              <p class="fine">This holds for WildScale's own cuts and for Premiere's Scene Edit Detection.</p>
+            </div>
+          </article>
+
+          <article class="slide" role="tabpanel" aria-label="Two graphics cards">
+            <svg class="art" viewBox="0 0 560 340" role="img" aria-label="One clip split between an NVIDIA card, an AMD processor graphics and the processor, finishing in 4.9 seconds instead of 9.5">
+              <rect width="560" height="340" rx="10" fill="#1d1a18" />
+              <text x="40" y="52" font-size="13" fill="#bdb2a6">Finding cuts in 8 minutes of 720p video</text>
+              <g transform="translate(40 76)" font-size="12">
+                <text y="14" fill="#bdb2a6">One card</text>
+                <rect x="110" width="370" height="20" rx="4" fill="#2a2522" /><rect class="bar one" x="110" width="370" height="20" rx="4" fill="#7a6a58" />
+                <text class="time t1" x="480" y="40" text-anchor="end" fill="#f4eee6">9.5 s</text>
+              </g>
+              <g transform="translate(40 150)" font-size="12">
+                <text y="14" fill="#bdb2a6">NVIDIA</text><rect x="110" width="191" height="20" rx="4" fill="#2a2522" /><rect class="bar lane" x="110" width="191" height="20" rx="4" fill="#35d07f" />
+                <text y="46" fill="#bdb2a6">AMD</text><rect x="110" y="32" width="191" height="20" rx="4" fill="#2a2522" /><rect class="bar lane" x="110" y="32" width="191" height="20" rx="4" fill="#d9675c" />
+                <text y="78" fill="#bdb2a6">Processor</text><rect x="110" y="64" width="191" height="20" rx="4" fill="#2a2522" /><rect class="bar lane" x="110" y="64" width="191" height="20" rx="4" fill="#4f9dff" />
+                <text class="time t2" x="301" y="106" text-anchor="end" fill="#f4eee6">4.9 s, the same cuts</text>
+              </g>
+              <text x="40" y="304" font-size="12" fill="#bdb2a6">4 minutes of 4K: 29.7 s on one card, 20.0 s with both</text>
+            </svg>
+            <div class="copy">
+              <h3>Uses both graphics cards</h3>
+              <p>On a laptop with NVIDIA and AMD or Intel graphics, WildScale puts both to work. A long clip is split between the two cards and the processor, so finding cuts takes about half the time, and each frame of analysis goes to whichever card is free first.</p>
+              <p class="fine">Prefer one card? Settings has Fastest card only.</p>
+            </div>
+          </article>
+
+          <article class="slide" role="tabpanel" aria-label="Learns your edits">
+            <svg class="art" viewBox="0 0 560 340" role="img" aria-label="Three people in a shot: WildScale first fits the whole group, then learns that you crop to the speaker on the left">
+              <rect width="560" height="340" rx="10" fill="#1d1a18" />
+              <g transform="translate(40 30)">
+                <rect width="480" height="220" rx="4" fill="#3b4652" /><rect y="150" width="480" height="70" fill="#4d473f" />
+                <rect x="60" y="96" width="92" height="124" rx="26" fill="#2e3440" /><circle cx="106" cy="72" r="28" fill="#e0b48e" />
+                <rect x="196" y="108" width="84" height="112" rx="24" fill="#6b3f35" /><circle cx="238" cy="86" r="25" fill="#c9926b" />
+                <rect x="326" y="104" width="86" height="116" rx="24" fill="#3f5c48" /><circle cx="369" cy="82" r="26" fill="#d6a37f" />
+                <g class="engine"><rect x="8" y="8" width="464" height="204" fill="none" stroke="#bdb2a6" stroke-dasharray="6 5" stroke-width="1.6" /><rect x="8" y="-8" width="96" height="15" fill="#bdb2a6" /><text x="12" y="4" font-size="10" fill="#1d1a18">first guess: fit</text></g>
+                <g class="yours"><rect x="40" y="0" width="176" height="220" fill="rgba(226,165,104,0.16)" stroke="#e2a568" stroke-width="2.6" /><rect x="40" y="-16" width="76" height="15" fill="#e2a568" /><text x="44" y="-4" font-size="10" fill="#1d1a18">your framing</text></g>
+              </g>
+              <g transform="translate(40 270)">
+                <text font-size="13" fill="#f4eee6" y="16">Your edits</text>
+                <rect x="96" y="4" width="240" height="14" rx="4" fill="#2a2522" /><rect class="bar learn" x="96" y="4" width="240" height="14" rx="4" fill="#e2a568" />
+                <text class="learned" x="350" y="16" font-size="12" fill="#bdb2a6">rule learned after 3 choices</text>
+                <text x="0" y="42" font-size="12" fill="#bdb2a6">Measures only: where the subject sits and how large. Never the picture.</text>
+              </g>
+            </svg>
+            <div class="copy">
+              <h3>Learns from the way you edit</h3>
+              <p>Every reference you set and every clip you move by hand becomes a measured decision in your own Your edits database. After three choices for one kind of shot, your habit outranks the built-in styles, and Like my own edits frames the whole timeline your way.</p>
+              <p class="fine">It learns by itself after each run, on the processor, so Premiere keeps its graphics card. It saves numbers, never frames.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="deckNav">
+          <button type="button" id="deckPrev" aria-label="Previous">←</button>
+          <div class="deckProgress"><span id="deckBar"></span></div>
+          <button type="button" id="deckPause" aria-label="Pause the presentation">Pause</button>
+          <button type="button" id="deckNext" aria-label="Next">→</button>
+        </div>
+      </div>
     </section>
 
     <section class="tour">
@@ -79,7 +269,7 @@
     <section class="points">
       <article>
         <h3>Knows your speaker</h3>
-        <p>Set the framing once. Matching shots across your cuts follow it.</p>
+        <p>Set the framing once. Matching shots follow it, and your own habits teach it more with every run.</p>
       </article>
       <article>
         <h3>Keeps titles whole</h3>
@@ -91,7 +281,7 @@
       </article>
       <article>
         <h3>Finds every cut</h3>
-        <p>Reads each frame, on your graphics card when it can, and cuts video and audio.</p>
+        <p>Reads each frame on both graphics cards, cuts dissolves and fades, and keeps every piece linked to its sound.</p>
       </article>
       <article>
         <h3>Pastes your framing</h3>
@@ -109,6 +299,77 @@
     <p>© 2026 Drugela. WildScale is an independent product and is not affiliated with or endorsed by Adobe. Adobe and Premiere Pro are trademarks of Adobe Inc.</p>
   </footer>
   <script>
+    // The presentation plays itself while it is on screen; a tab, an arrow or Pause takes over.
+    (() => {
+      const SLIDE_MS = 9000;
+      const deck = document.getElementById("deck");
+      const tabs = [...deck.querySelectorAll(".deckTabs button")];
+      const slides = [...deck.querySelectorAll(".slide")];
+      const bar = document.getElementById("deckBar");
+      const pause = document.getElementById("deckPause");
+      const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let current = 0;
+      let timer = null;
+      let held = still;
+      let visible = false;
+
+      deck.style.setProperty("--slide-ms", `${SLIDE_MS}ms`);
+
+      function restartBar() {
+        deck.classList.remove("playing");
+        void bar.offsetWidth; // Lets the progress animation start again from zero.
+        deck.classList.toggle("playing", !held && visible);
+      }
+
+      function schedule() {
+        clearTimeout(timer);
+        if (!held && visible) {
+          timer = setTimeout(() => show(current + 1), SLIDE_MS);
+        }
+        restartBar();
+      }
+
+      function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide) => slide.classList.remove("active"));
+        void deck.offsetWidth; // A slide shown again plays its animation from the start.
+        slides[current].classList.add("active");
+        tabs.forEach((tab, at) => tab.setAttribute("aria-selected", String(at === current)));
+        schedule();
+      }
+
+      function hold(value) {
+        held = value;
+        pause.textContent = held ? "Play" : "Pause";
+        pause.setAttribute("aria-label", held ? "Play the presentation" : "Pause the presentation");
+        schedule();
+      }
+
+      tabs.forEach((tab, at) => tab.addEventListener("click", () => show(at)));
+      document.getElementById("deckPrev").addEventListener("click", () => show(current - 1));
+      document.getElementById("deckNext").addEventListener("click", () => show(current + 1));
+      pause.addEventListener("click", () => hold(!held));
+      deck.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+          show(current + (event.key === "ArrowRight" ? 1 : -1));
+          tabs[current].focus();
+        }
+      });
+      if (still) {
+        hold(true);
+      }
+
+      new IntersectionObserver(([entry]) => {
+        const wasVisible = visible;
+        visible = entry.isIntersecting;
+        if (visible && !wasVisible) {
+          show(current); // Coming into view plays the slide from its start.
+        } else if (!visible) {
+          schedule();
+        }
+      }, { threshold: 0.35 }).observe(deck);
+    })();
+
     // Apple visitors get the Mac download first; everyone else keeps the page as written.
     if (/mac|iphone|ipad|ipod/i.test(navigator.userAgentData?.platform || navigator.platform || navigator.userAgent)) {
       const download = document.getElementById("download");

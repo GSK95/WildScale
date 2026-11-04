@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/GSK95/WildScale/releases/download/1.3.0/WildScale-1.3.0-mac-x86_64.pkg">Download for Mac</a> ·
-  <a href="https://github.com/GSK95/WildScale/releases/download/1.3.1/WildScaleSetup-1.3.1.exe">Download for Windows</a> ·
+  <a href="https://github.com/GSK95/WildScale/releases/download/1.3.5/WildScaleSetup-1.3.5.exe">Download for Windows</a> ·
   <a href="https://gsk95.github.io/WildScale/">Website</a> ·
   <a href="https://gsk95.github.io/WildScale/guide.html">User guide</a> ·
   <a href="https://gsk95.github.io/WildScale/privacy.html">Privacy</a>
@@ -18,9 +18,20 @@ WildScale is a panel for Adobe Premiere Pro that reframes a horizontal edit for 
   <img src="assets/panel.png" alt="The WildScale panel with Scene Edit Detection open" width="360" />
 </p>
 
+## New in 1.3.5 for Windows
+
+- **Sees the shot when you stop.** Rest the playhead on a frame and WildScale outlines the people, faces, objects and titles in it. Click one to mark it, or leave them and let WildScale decide. Auto detect can be turned off, and **Shift+C** still captures by hand.
+- **Frames by what is in the shot.** Clips without a reference are framed by the people, cars, animals, food, screens and props in them.
+- **Cuts dissolves and fades.** A dissolve is cut where the new shot takes over, and a fade through black in the black.
+- **Stops cleanly.** Stop halts a run at once and puts back everything it changed.
+- **Uses both graphics cards.** On a laptop with NVIDIA and AMD or Intel graphics, finding cuts takes about half the time.
+- **Learns your edits.** Your references and hand fixes become measured decisions, and **Like my own edits** frames the timeline your way.
+
+See the [release notes](https://github.com/GSK95/WildScale/releases/tag/1.3.5).
+
 ## What it does
 
-- **Finds every cut.** Reads each frame, on your graphics card when the format allows it, and cuts video and audio on the timeline.
+- **Finds every cut.** Reads each frame, on your graphics card when the format allows it, and cuts video and audio on the timeline, with every piece linked to its sound.
 - **Knows your speaker.** Set the framing once and matching shots across your cuts follow it.
 - **Removes black bars.** Finds bars inside your footage and crops exactly that much, only on the sides that have them.
 - **Reads split screens.** Keeps the crop off the seam, and shows both sides or follows the person.
@@ -51,7 +62,7 @@ WildScale is a panel for Adobe Premiere Pro that reframes a horizontal edit for 
 | **Operating system** | Windows 10 or 11, 64-bit, or macOS 13 or later on an Intel Mac | Windows 11 or macOS 15 |
 | **Memory** | Enough left over beside Premiere | 16 GB or more |
 | **Processor** | Any 64-bit processor | 4 cores or more |
-| **Graphics card** | Not required | A DirectML-capable card, ideally NVIDIA |
+| **Graphics card** | Not required | A DirectML-capable card, ideally NVIDIA. On Windows, two cards work together |
 | **Disk space** | About 300 MB for WildScale | 2 GB or more free for temporary frames |
 | **FFmpeg** | Not required | Installed, for faster cuts and motion detection |
 
@@ -62,7 +73,7 @@ The Mac version has been tested with Premiere Pro 26.0 on macOS 15 on an Intel M
 - **FFmpeg** is a free tool that WildScale does not include. It makes cut detection faster and powers motion detection. On Windows, install it with `winget install Gyan.FFmpeg`, then restart Premiere Pro. On a Mac with Homebrew, run `brew install ffmpeg`.
 - **Without FFmpeg**, a slower built-in decoder finds the cuts and each clip is framed as a whole. Premiere's own Scene Edit Detection only runs when you tick it.
 - **Administrator rights** are not needed on Windows. The Mac package asks for your password.
-- **An internet connection** is only needed to download the installer. The face and text models are included.
+- **An internet connection** is only needed to download the installer. The face, text and object models are included.
 
 ### What to expect
 
@@ -81,7 +92,7 @@ The Mac version has been tested with Premiere Pro 26.0 on macOS 15 on an Intel M
 
 ### Windows
 
-1. Download [`WildScaleSetup-1.3.1.exe`](https://github.com/GSK95/WildScale/releases/download/1.3.1/WildScaleSetup-1.3.1.exe). You do not need administrator rights.
+1. Download [`WildScaleSetup-1.3.5.exe`](https://github.com/GSK95/WildScale/releases/download/1.3.5/WildScaleSetup-1.3.5.exe). You do not need administrator rights.
 2. Run it and restart Premiere Pro.
 3. Open the panel from the Window menu:
    - Premiere Pro 26.5.2 and later: **UXP Plugins**
@@ -109,7 +120,7 @@ The [user guide](https://gsk95.github.io/WildScale/guide.html) covers every part
 
 ## Status
 
-WildScale 1.3.1 for Windows and 1.3.0 for Mac are pre-releases. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
+WildScale 1.3.5 for Windows and 1.3.0 for Mac are pre-releases. To report a problem, email [drugela.music@gmail.com](mailto:drugela.music@gmail.com).
 
 Downloads are on the [Releases](https://github.com/GSK95/WildScale/releases) page.
 
